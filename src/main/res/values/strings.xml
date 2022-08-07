@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ArtistSearch</string>
+    <string name="powered_by_artsy">Powered by Artsy</string>
+    <string name="search_hint">Search...</string>
+    <string name="card_image_description">Card image</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="search_menu_title">Search</string>
+    <string name="favor_menu_title">favor</string>
+    <string name="shared_preference_name">SHARED_PREFERENCE</string>
+    <string name="artist_detail">artist detail</string>
+    <string name="favorite">FAVORITES</string>
+    <string name="category">Category</string>
+    <string name="category_images">Category images</string>
+    <string name="description">Description</string>
+    <string name="no_result_found">No Result Found</string>
+    <string name="no_artwork_available">No artwork Available</string>
+    <string name="no_category_available">No Category Available</string>
+    <string name="loading">loading...</string>
+</resources>
