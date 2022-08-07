@@ -1,0 +1,6 @@
+<div class="card h-100 no-border" class="card_block" *ngIf="card_item" (mouseenter)="check()" (mouseleave)="uncheck() " style="background-color:{{is_selected || is_hover? check_color:uncheck_color}}">
+	<img [src]="card_item.img == miss_fig_identifier? miss_fig_replacer:card_item.img" class="card-img-top no-border" alt="...">
+	<div class="card-footer text-center no-border" style="background-color:{{is_selected || is_hover? check_color:uncheck_color}};">
+		<span class="card-text text-white text-wrap">{{card_item.name}}</span>
+	</div>
+</div>

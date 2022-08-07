@@ -1,0 +1,46 @@
+<div id="artworkcard" class="card h-100 m-auto" *ngIf="artwork">
+  <img [src]="artwork.img" class="card-img-top" alt="...">
+  <div class="card-body"></div>
+  <div class="card-footer text-center bg-white" style="border: none;">
+	<span class="card-text">{{artwork.title}}</span><br/>
+	<span class="card-text">{{artwork.date}}</span>
+	<button data-bs-toggle="modal" (click)="getData()" [attr.data-bs-target]="ID_id" class="btn btn-primary container-fluid" style="background-color:#205375;border:0;">Categories</button>
+  </div>
+</div>
+
+<div class="modal fade" [id]="ID?ID:''" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document" *ngIf="artwork">
+    <div class="modal-content">
+      <div class="modal-header">
+		<img class="img-responsive" style="height:3rem;" [src]="artwork.img">
+		<div class="col">
+		<div class="row">
+			<span class="ms-2">{{artwork.title}}</span>
+		</div>
+		<div class="row">
+			<span class="ms-2">{{artwork.date}}</span>
+		</div>
+		</div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+		<div class="container-fluid text-center" *ngIf="loading">
+			<span class="spinner-border spinner-border-sm" style="width: 2rem; height: 2rem; color: #205375;"></span>
+		</div>
+		<div class="alert alert-danger" role="alert" *ngIf="categories && categories.length == 0">
+			No results.
+	   </div>
+		<div class="row row-cols-1 row-cols-md-3 g-4" *ngIf="!loading && categories">
+		  <div class="col mx-auto" *ngFor="let category of categories">
+		    <div class="card">
+		      <img [src]="category.img" class="card-img-top" alt="...">
+		      <div class="card-body text-center">
+		        <span class="card-text">{{category.title}}</span>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+      </div>
+    </div>
+  </div>
+</div>

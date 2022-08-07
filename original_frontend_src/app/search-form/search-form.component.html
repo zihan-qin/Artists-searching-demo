@@ -1,0 +1,57 @@
+<form  #searchForm="ngForm" (ngSubmit)="onSubmit()">
+	<div class="container m-0 m-auto">
+		<input type="text" class="form-control m-auto" [formControl]="value" id="formInput" placeholder="Please enter an artist name.">
+		<div class="container-fluid text-center p-3">
+			<button style="background-color:#205375;" type="submit" class="btn btn-primary btn-sm m-1" [disabled]="!value.valid">
+				Search
+				<span class="spinner-border spinner-border-sm" *ngIf="loading"></span>
+			</button>
+			<button  type="button" (click)="clearInput()" class="btn btn-secondary btn-sm m-1">Clear</button>
+		</div>
+	</div>
+</form>
+
+
+<div class="container mt-4 m-auto pe-0" *ngIf="show_result">
+	<div id="search_na" class="alert alert-danger me-3" role="alert" *ngIf="cards.length == 0">
+		No results.
+	</div>
+	<div *ngIf="cards.length > 0" id="cardlist">
+		<app-card class="card" style="border-radius:0;" *ngFor="let card of cards" [card_item]="card" (click)="onSelect(card);" [is_selected]="select_card==card"></app-card>
+	</div>
+</div>
+
+<div class="container-fluid text-center" *ngIf="!this.loaded_detail">
+	<span class="spinner-border spinner-border-sm m-5 " currentColor="#205375" style="width: 2rem; height: 2rem; color: #205375;"></span>
+</div>
+
+<div class="container mt-5 mb-5 pb-3 pb-10" *ngIf="show_detail && select_card && bioinfo && artworks">
+	<ul class="nav nav-pills nav-fill">
+	<li class="nav-item">
+	<a class="nav-link {{selected_tab == 'bioinfo' ? 'active' : ''}}" style="{{selected_tab == 'bioinfo' ? 'background-color:#205375;':'color:#205375;'}}" (click)="selected_tab='bioinfo'">Artist Info</a>
+	</li>
+	<li class="nav-item">
+	<a class="nav-link {{selected_tab == 'artworks' ? 'active' : ''}}" style="{{selected_tab == 'artworks' ? 'background-color:#205375;':'color:#205375;'}}" (click)="selected_tab='artworks'">Artworks</a>
+	</li>
+	</ul>
+
+	<div class="container-fluid	mt-2 mb-3 pb-3 p-0">
+
+		<div class="container-fluid m-auto p-0 pb-3 mb-5" *ngIf="selected_tab=='bioinfo'">
+			<div class="text-center mb-2">
+				<span id="artistname">{{bioinfo.name}} </span> <span class="artistbirth">({{bioinfo.birthday}}</span> - <span class="artistbirth">{{bioinfo.deathday}})</span><br/>
+				<span id="artistcountry">{{bioinfo.nationality}}</span><br/>
+			</div>
+			<p class="container-fluid p-0 mt-3" id="bioinfo">{{bioinfo.biography}}</p><br/>
+		</div>
+
+		<div id = "artwork_na" class="alert alert-danger" role="alert" *ngIf="selected_tab=='artworks' && artworks.length == 0">
+			No Artworks.
+		</div>
+		<div class="row row-cols-1 row-cols-md-4 g-4" *ngIf="selected_tab=='artworks' && artworks.length > 0">
+		<div id="gallery" class="col mx-auto" *ngFor="let artwork of artworks index as i">
+		  	<app-category-modal [artwork]="artwork" [ID]="'id'+i"></app-category-modal>
+		</div>
+		</div>
+	</div>
+</div>

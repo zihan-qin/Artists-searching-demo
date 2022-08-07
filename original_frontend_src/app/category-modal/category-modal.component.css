@@ -1,0 +1,22 @@
+.modal-backdrop {
+    filter: alpha(opacity=1)!important;
+    background: rgba(0,0,0,.7);
+    }
+
+@media(max-width:500px){
+    #artworkcard{
+        height:auto!important;
+        max-width: 80%;
+        width:fit-content
+    }
+
+    .model{
+        overflow-y:auto;
+        text-align: center;
+    }
+    .modal-dialog{
+        width:90%!important;
+        margin-left:auto!important;
+        margin-right:auto!important;
+    }
+}

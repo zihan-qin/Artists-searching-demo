@@ -1,0 +1,13 @@
+#footer-image {
+	width: 1rem;
+	vertical-align:middle;
+}
+
+@media (min-width:501px) {
+	app-search-form{
+		width:80%!important;
+	}
+	#content{
+		width:80%!important;
+	}
+}
