@@ -30,7 +30,7 @@ The website (Searching card version) : https://hw8-zihanqin.wl.r.appspot.com/
 (Carousel version) : https://zihan-8carousel.wl.r.appspot.com/
 
 
-The sample searching key words: Monet
+* The sample searching key words: Monet *
 
 
 Android App video demo: https://drive.google.com/file/d/1-dTxapdSdTJty7SJIkgS4Ta1zOFH-BHh/view?usp=sharing
