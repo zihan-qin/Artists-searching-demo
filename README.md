@@ -1,6 +1,9 @@
 # Artists-searching-demo
 
 
+## Project introduction
+
+
 This is a course project that includes a responsive design web app and a android app version.
 The backend of both version are implemented in JavaScript using Node.js Express framework. The backends and the web app version are deployed to Google Cloud Platform.
 
@@ -18,8 +21,13 @@ The application provides a user-friendly page for users to search and gain more 
 3. Check their artworks, also learn about the genres of the selected artwork from a pop-up window.
 
 
+
+## Sample
+
+
 The website (Searching card version) : https://hw8-zihanqin.wl.r.appspot.com/
-            (Carousel version) : https://zihan-8carousel.wl.r.appspot.com/
+
+(Carousel version) : https://zihan-8carousel.wl.r.appspot.com/
 
 
 The sample searching key words: Monet
